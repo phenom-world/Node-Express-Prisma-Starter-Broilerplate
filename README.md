@@ -1,19 +1,12 @@
 # Node-Express-Prisma-Starter-Boilerplate
 
-A production-ready Node.js Express boilerplate with TypeScript, featuring robust architecture, Prisma ORM with generic repository pattern, Object-Oriented Programming (OOP) principles, and essential integrations.
+A production-ready Node.js Express boilerplate with TypeScript, featuring robust architecture, Prisma ORM with generic repository pattern and Object-Oriented Programming (OOP) principles.
 
 ## Features
 
 - **TypeScript Support** - Written in TypeScript for better developer experience and type safety.
 - **Express.js** - Fast, unopinionated web framework for Node.js.
 - **Prisma ORM** - Database access with a **Generic Repository Pattern**, following OOP principles for better maintainability and reusability.
-- **Environment Configuration** - Using dotenv for environment variable management.
-- **Logging** - Integrated logging system with Morgan and a custom logger.
-- **Security**
-  - Helmet for security headers.
-  - CORS configuration.
-  - Rate limiting to prevent abuse.
-  - Cookie parser for handling cookies securely.
 - **Redis Integration** - Redis support for caching to improve performance.
 - **Error Handling** - Centralized global error handling middleware.
 - **API Documentation** - Auto-generated route documentation.
@@ -27,7 +20,6 @@ A production-ready Node.js Express boilerplate with TypeScript, featuring robust
   - Rate limiting middleware.
   - Pagination middleware.
   - Request validation middleware.
-- **Database Seeding** - Seed initial users and test data into the database.
 - **Postman Collection** - `Broilerplate.postman_collection.json` included for API testing.
 - **Object-Oriented Architecture** - Designed with OOP principles, ensuring modularity, reusability, and scalability.
 
@@ -88,14 +80,18 @@ src/
 ├── app/
 │   ├── middlewares/       # Express middlewares
 │   ├── modules/           # Feature modules
-│   ├── repository/        # Generic repository pattern for Prisma
-│   ├── services/          # Service layer following OOP principles
-│   ├── router.ts          # Application router
-│   └── index.ts           # Express app configuration
-├── config/                # Configuration files
-├── shared/                # Shared utilities and helpers
-├── types/                 # TypeScript type definitions
-└── server.ts              # Application entry point
+│   │   └───├── constants/
+│   │       ├── controllers/
+│   │       ├── helpers/
+│   │       ├── interfaces/
+│   │       ├── routes/
+│   │       ├── services/
+│   │       └── router.ts
+│   └── index.ts          # Express app configuration
+├── config/               # Configuration files
+├── shared/              # Shared utilities and helpers
+├── types/               # TypeScript type definitions
+└── server.ts            # Application entry point
 ```
 
 ## Usage
@@ -162,10 +158,3 @@ Contributions are welcome! Please follow these steps:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- The Express.js team
-- The TypeScript team
-- Prisma ORM contributors
-- Contributors to all dependencies used in this project
